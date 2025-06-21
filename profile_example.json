@@ -1,0 +1,272 @@
+{
+  "urn": "ACoAAA8BYqEBCGLg_vT_ca6mMEqkpp9nVffJ3hc",
+  "username": "williamhgates",
+  "firstName": "Bill",
+  "lastName": "Gates",
+  "isCreator": true,
+  "isOpenToWork": false,
+  "isHiring": false,
+  "profilePicture": "https://media.licdn.com/dms/image/D5603AQHv6LsdiUg1kw/profile-displayphoto-shrink_800_800/0/1695167344576?e=1726099200&v=beta&t=HCqI_9ARUL4CHu-FdrA3QesLf3TchXimImSMjNqcRNg",
+  "backgroundImage": [
+    {
+      "width": 800,
+      "height": 200,
+      "url": "https://media.licdn.com/dms/image/D5616AQHy2R5tyt2YUA/profile-displaybackgroundimage-shrink_200_800/0/1672782785474?e=1726099200&v=beta&t=RgiL52PyTYv56gtFQEJMnUDdvlOJvUYoxuR4b5q1Pn8"
+    },
+    {
+      "width": 1400,
+      "height": 350,
+      "url": "https://media.licdn.com/dms/image/D5616AQHy2R5tyt2YUA/profile-displaybackgroundimage-shrink_350_1400/0/1672782785474?e=1726099200&v=beta&t=7it2gl9X8c42ghiBCLzsG1WSj6lSoeEQ7anZH7Z3cbg"
+    }
+  ],
+  "summary": "Co-chair of the Bill & Melinda Gates Foundation. Founder of Breakthrough Energy. Co-founder of Microsoft. Voracious reader. Avid traveler. Active blogger.",
+  "headline": "Co-chair, Bill & Melinda Gates Foundation",
+  "geo": {
+    "country": "United States",
+    "city": "Seattle, Washington",
+    "full": "Seattle, Washington, United States"
+  },
+  "languages": null,
+  "educations": [
+    {
+      "start": {
+        "year": 1973,
+        "month": 0,
+        "day": 0
+      },
+      "end": {
+        "year": 1975,
+        "month": 0,
+        "day": 0
+      },
+      "fieldOfStudy": "",
+      "degree": "",
+      "grade": "",
+      "schoolName": "Harvard University",
+      "description": "",
+      "activities": "",
+      "url": "https://www.linkedin.com/school/harvard-university/",
+      "schoolId": "1646"
+    },
+    {
+      "start": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      },
+      "fieldOfStudy": "",
+      "degree": "",
+      "grade": "",
+      "schoolName": "Lakeside School",
+      "description": "",
+      "activities": "",
+      "url": "https://www.linkedin.com/school/lakeside-school/",
+      "schoolId": "30288"
+    }
+  ],
+  "position": [
+    {
+      "companyName": "Bill & Melinda Gates Foundation",
+      "companyUsername": "bill-&-melinda-gates-foundation",
+      "companyURL": "https://www.linkedin.com/company/bill-&-melinda-gates-foundation/",
+      "companyLogo": "https://media.licdn.com/dms/image/C4E0BAQE7Na_mKQhIJg/company-logo_400_400/0/1633731811337/bill__melinda_gates_foundation_logo?e=1729123200&v=beta&t=y6KgMPv3wKUUNO9aTEgBKuEhKk7lmrCczlHCRcDQjwU",
+      "companyIndustry": "Non-profit Organization Management",
+      "companyStaffCountRange": "1001 - 5000",
+      "title": "Co-chair",
+      "multiLocaleTitle": {
+        "en_US": "Co-chair"
+      },
+      "multiLocaleCompanyName": {
+        "en_US": "Bill & Melinda Gates Foundation"
+      },
+      "location": "",
+      "description": "",
+      "employmentType": "",
+      "start": {
+        "year": 2000,
+        "month": 0,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      }
+    },
+    {
+      "companyName": "Breakthrough Energy ",
+      "companyUsername": "breakthrough-energy",
+      "companyURL": "https://www.linkedin.com/company/breakthrough-energy/",
+      "companyLogo": "https://media.licdn.com/dms/image/C4D0BAQGwD9vNu044FA/company-logo_400_400/0/1630531940051/breakthrough_energy_ventures_logo?e=1729123200&v=beta&t=Y9uvaHpFvIfiESWo9elIv_1f7KCeu-d8xdT5dWijMIg",
+      "companyIndustry": "Management Consulting",
+      "companyStaffCountRange": "51 - 200",
+      "title": "Founder",
+      "multiLocaleTitle": {
+        "en_US": "Founder"
+      },
+      "multiLocaleCompanyName": {
+        "en_US": "Breakthrough Energy "
+      },
+      "location": "",
+      "description": "",
+      "employmentType": "",
+      "start": {
+        "year": 2015,
+        "month": 0,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      }
+    },
+    {
+      "companyName": "Microsoft",
+      "companyUsername": "microsoft",
+      "companyURL": "https://www.linkedin.com/company/microsoft/",
+      "companyLogo": "https://media.licdn.com/dms/image/C560BAQE88xCsONDULQ/company-logo_400_400/0/1630652622688/microsoft_logo?e=1729123200&v=beta&t=nb1qF72L2FQ6Q9_EM70Bhm5X6eDsiEDkvmbLYtKVYa0",
+      "companyIndustry": "Computer Software",
+      "companyStaffCountRange": "10001 - 0",
+      "title": "Co-founder",
+      "multiLocaleTitle": {
+        "en_US": "Co-founder"
+      },
+      "multiLocaleCompanyName": {
+        "en_US": "Microsoft"
+      },
+      "location": "",
+      "description": "",
+      "employmentType": "",
+      "start": {
+        "year": 1975,
+        "month": 0,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      }
+    }
+  ],
+  "fullPositions": [
+    {
+      "companyName": "Bill & Melinda Gates Foundation",
+      "companyUsername": "bill-&-melinda-gates-foundation",
+      "companyURL": "https://www.linkedin.com/company/bill-&-melinda-gates-foundation/",
+      "companyLogo": "https://media.licdn.com/dms/image/C4E0BAQE7Na_mKQhIJg/company-logo_400_400/0/1633731811337/bill__melinda_gates_foundation_logo?e=1729123200&v=beta&t=y6KgMPv3wKUUNO9aTEgBKuEhKk7lmrCczlHCRcDQjwU",
+      "companyIndustry": "Non-profit Organization Management",
+      "companyStaffCountRange": "1001 - 5000",
+      "title": "Co-chair",
+      "multiLocaleTitle": {
+        "en_US": "Co-chair"
+      },
+      "multiLocaleCompanyName": {
+        "en_US": "Bill & Melinda Gates Foundation"
+      },
+      "location": "",
+      "description": "",
+      "employmentType": "",
+      "start": {
+        "year": 2000,
+        "month": 0,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      }
+    },
+    {
+      "companyName": "Breakthrough Energy ",
+      "companyUsername": "breakthrough-energy",
+      "companyURL": "https://www.linkedin.com/company/breakthrough-energy/",
+      "companyLogo": "https://media.licdn.com/dms/image/C4D0BAQGwD9vNu044FA/company-logo_400_400/0/1630531940051/breakthrough_energy_ventures_logo?e=1729123200&v=beta&t=Y9uvaHpFvIfiESWo9elIv_1f7KCeu-d8xdT5dWijMIg",
+      "companyIndustry": "Management Consulting",
+      "companyStaffCountRange": "51 - 200",
+      "title": "Founder",
+      "multiLocaleTitle": {
+        "en_US": "Founder"
+      },
+      "multiLocaleCompanyName": {
+        "en_US": "Breakthrough Energy "
+      },
+      "location": "",
+      "description": "",
+      "employmentType": "",
+      "start": {
+        "year": 2015,
+        "month": 0,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      }
+    },
+    {
+      "companyName": "Microsoft",
+      "companyUsername": "microsoft",
+      "companyURL": "https://www.linkedin.com/company/microsoft/",
+      "companyLogo": "https://media.licdn.com/dms/image/C560BAQE88xCsONDULQ/company-logo_400_400/0/1630652622688/microsoft_logo?e=1729123200&v=beta&t=nb1qF72L2FQ6Q9_EM70Bhm5X6eDsiEDkvmbLYtKVYa0",
+      "companyIndustry": "Computer Software",
+      "companyStaffCountRange": "10001 - 0",
+      "title": "Co-founder",
+      "multiLocaleTitle": {
+        "en_US": "Co-founder"
+      },
+      "multiLocaleCompanyName": {
+        "en_US": "Microsoft"
+      },
+      "location": "",
+      "description": "",
+      "employmentType": "",
+      "start": {
+        "year": 1975,
+        "month": 0,
+        "day": 0
+      },
+      "end": {
+        "year": 0,
+        "month": 0,
+        "day": 0
+      }
+    }
+  ],
+  "skills": null,
+  "givenRecommendation": null,
+  "givenRecommendationCount": 0,
+  "receivedRecommendation": null,
+  "receivedRecommendationCount": 0,
+  "courses": null,
+  "certifications": null,
+  "honors": null,
+  "projects": {
+    "total": 0,
+    "items": null
+  },
+  "volunteering": null,
+  "supportedLocales": [
+    {
+      "country": "US",
+      "language": "en"
+    }
+  ],
+  "multiLocaleFirstName": {
+    "en": "Bill"
+  },
+  "multiLocaleLastName": {
+    "en": "Gates"
+  },
+  "multiLocaleHeadline": {
+    "en": "Co-chair, Bill & Melinda Gates Foundation"
+  }
+}
