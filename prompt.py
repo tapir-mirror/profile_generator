@@ -30,6 +30,19 @@ subprompts = ["You are a professional personality analyst. Analyze this LinkedIn
               "You are a recruitment AI. Process the following LinkedIn profile and output your analysis of the candidate's professional personality."]
 
 def buildprompt(subprompt, profile):
+    # Convert profile to native Python types if it's a string
+    if isinstance(profile, str):
+        try:
+            profile_data = json.loads(profile)
+        except json.JSONDecodeError:
+            profile_data = profile
+    else:
+        profile_data = profile
+
+    # Convert any numpy types to native Python types
+    if hasattr(profile_data, 'to_dict'):
+        profile_data = profile_data.to_dict()
+
     prompt = f'''{subprompt}
 
 Based on the profile data below, analyze their professional personality and return ONLY a valid JSON response with this exact structure:
@@ -49,25 +62,30 @@ Based on the profile data below, analyze their professional personality and retu
     {{"trait": "Communication", "score": 82}}
   ]
 }}
-You should use data from the profile below to inform your analysis.
+
 Profile Data:
-{profile}
+{json.dumps(profile_data, default=str, indent=2)}
 '''
     return prompt
 
-def call_model_api(prompt, port):
+def call_model_api(prompt, port, model_name):
     """
     Make API call to vLLM model running on localhost at specified port
-    Uses the /v1/completions endpoint as specified in models.md
+    Uses the /v1/chat/completions endpoint as specified in models.md
     """
-    url = f"http://localhost:{port}/v1/completions"
+    url = f"http://localhost:{port}/v1/chat/completions"
+    clean_model_name = model_name.replace(":", "").lower()  # Clean model name for filenames
     
     payload = {
-        "model": "default",
-        "prompt": prompt,
+        "model": model_name,
+        "messages": [
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
         "temperature": 0.7,
-        "max_tokens": 2000,
-        "stop": ["Human:", "Assistant:", "\n\n---"]
+        "max_tokens": 3000
     }
     
     headers = {
@@ -80,21 +98,23 @@ def call_model_api(prompt, port):
         
         result = response.json()
         if 'choices' in result and len(result['choices']) > 0:
-            return result['choices'][0]['text'].strip()
+            return result['choices'][0]['message']['content'].strip(), clean_model_name
         else:
-            return None
+            return None, clean_model_name
             
     except requests.exceptions.RequestException as e:
         print(f"Error calling model API on port {port}: {e}")
-        return None
+        return None, clean_model_name
 
-def save_conversation(port, index, conversation_data, output_dir="../output"):
+def save_conversation(model_name, index, conversation_data, output_dir="../output"):
     """
-    Save conversation in the specified format to output folder
+    Save conversation in the specified format to output folder with timestamp to prevent overwriting
     """
     os.makedirs(output_dir, exist_ok=True)
     
-    filename = f"{port}_{index}.json"
+    # Add timestamp to filename
+    timestamp = int(time.time())
+    filename = f"{model_name}_{index}_{timestamp}.json"
     filepath = os.path.join(output_dir, filename)
     
     try:
@@ -104,7 +124,7 @@ def save_conversation(port, index, conversation_data, output_dir="../output"):
     except Exception as e:
         print(f"Error saving conversation to {filepath}: {e}")
 
-def process_queue(queue_id, redis_client, port, output_dir="../output", queue_prefix="profiles"):
+def process_queue(queue_id, redis_client, port, model_name, output_dir="../output", queue_prefix="profiles"):
     """
     Process jobs from a specific Redis queue for a specific model port
     """
@@ -136,7 +156,7 @@ def process_queue(queue_id, redis_client, port, output_dir="../output", queue_pr
             prompt = buildprompt(selected_subprompt, json.dumps(profile_data, indent=2))
             
             # Call the model API
-            response = call_model_api(prompt, port)
+            response, model_name_clean = call_model_api(prompt, port, model_name)
             
             if response:
                 # Create conversation data in the required format
@@ -154,7 +174,7 @@ def process_queue(queue_id, redis_client, port, output_dir="../output", queue_pr
                 }
                 
                 # Save the conversation
-                save_conversation(port, conversation_index, conversation_data, output_dir)
+                save_conversation(model_name_clean, conversation_index, conversation_data, output_dir)
                 conversation_index += 1
                 
                 print(f"Successfully processed job {job_id}")
@@ -183,6 +203,7 @@ def main():
     parser.add_argument("--queue-offset", default=0, type=int, help="Offset for queue numbers (allows multiple instances)")
     parser.add_argument("--queue-prefix", default="profiles", help="Prefix for queue names")
     parser.add_argument("--output-dir", default="../output", help="Output directory for conversation files")
+    parser.add_argument("--model", required=True, help="Model name to use (e.g., qwen:32b)")
     
     args = parser.parse_args()
     
@@ -202,14 +223,9 @@ def main():
         queue_id = i + args.queue_offset
         port = args.start_port + i
         
-        # Ensure port is within the specified range (8000-8007)
-        if port > 8007:
-            print(f"Warning: Port {port} exceeds maximum allowed port 8007. Skipping.")
-            continue
-        
         thread = Thread(
             target=process_queue,
-            args=(queue_id, redis_client, port, args.output_dir, args.queue_prefix),
+            args=(queue_id, redis_client, port, args.model, args.output_dir, args.queue_prefix),
             daemon=True
         )
         threads.append(thread)
